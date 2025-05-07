@@ -1,0 +1,703 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    background-image: url(./images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-x: hidden;
+}
+
+:root {
+    --color-text: #cdc6c3;
+    --hover-color: #70efbf;
+    --neon-box-shadow: 0 0 .5rem #70efbf;
+    --index: calc(1vw + 1vh);
+}
+
+::-webkit-scrollbar {
+    height: 0;
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--hover-color);
+    border-radius: 80px;
+}
+
+a {
+    color: #fff;
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--hover-color);
+}
+
+.logo img {
+    max-width: 100%;
+    width: 40px;
+    height: auto;
+}
+
+.header .nav-list {
+    display: flex;
+}
+
+.nav-list li {
+    margin: 0 24px;
+}
+
+.nav-list .nav-item {
+    position: relative;
+    padding: 17px 0;
+    font-weight: 500; 
+    font-size: 18px;
+    transition: all .2s ease;
+}
+
+.nav-list .nav-item:hover {
+    color: var(--hover-color);
+}
+
+.nav-list .nav-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 1px;
+    background: var(--hover-color);
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+
+.nav-list .nav-item:hover:before {
+    width: 100%;
+}
+
+.nav-list li .active {
+    color: var(--hover-color);
+    border-bottom: 1px solid var(--hover-color);
+}
+
+.right-side {
+    display: flex;
+    align-items: center;
+}
+
+.marsBtn {
+    background: linear-gradient(180deg, #70efbf 0, #21e69a 100%);
+    height: 28px;
+    line-height: 28px;
+    border-radius: 5px;
+    padding: 0 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all .3s ease;
+    white-space: nowrap;
+    display: inline-block;
+    color: #000;
+}
+
+.marsBtn:hover {
+    background: linear-gradient(180deg, #70efbf 0, #12bd7b 100%);
+    box-shadow: 0 3px 9px #25b981;
+}
+
+#menu-icon {
+    color: var(--hover-color);
+    font-size: 40px;
+    display: none;
+}
+
+section {
+   padding: 100px 12%;
+}
+
+/* Home section ----------------------*/
+
+.home-img .hero {
+    max-width: 100%;
+    width: 400px;
+    height: auto;
+    animation: floatImg 4s ease-in-out infinite;
+}
+
+.earth-rotate {
+    width: 100%;
+}
+
+.earth-rotate .earth {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: calc(var(--index)*45);
+    animation: rotate 300s infinite linear;
+}
+
+.home {
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    color: #fff;
+    width: 100%;
+}
+
+.home-text h1, h2 {
+    font-size: calc(var(--index)*2);
+    margin-bottom: 16px;
+    font-weight: 800;
+    text-shadow:  1px 1px 1px #474747;
+}
+
+.home-text .marsBtn {
+    margin-top: 16px;
+    height: 35px;
+    line-height: 35px;
+}
+
+span {
+    color: var(--hover-color);
+}
+
+.home-img {
+    position: relative;
+}
+
+.home-img .moon-light {
+    position: absolute;
+    left: 0;
+    mix-blend-mode: screen;
+    width: 90px;
+}
+
+/* Flight List ----------------------*/
+
+.flight-list {
+    position: relative;
+}
+
+.flight-list .container {
+   margin-top: 96px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   position: relative;
+}
+
+ .container .flight-box {
+    width: 200px;
+    padding: 32px 24px 32px;
+    text-align: center;
+    background-image: url(./images/cardBg.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    color: #fff;
+    z-index: 2;
+    margin: 32px 8px;
+}
+
+.flight-box img {
+    width: 120px;
+    margin: -64px auto 0 auto;
+    animation: floatImg 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 .5rem #1797ff);
+    border-radius: 50%;
+}
+
+.flight-box h2 {
+    color: var(--hover-color);
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+.flight-box p {
+    color: #dddcdc;
+    line-height: 24px;
+    font-size: 14.4px;
+}
+
+.flight-box .marsBtn {
+    margin-top: 16px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 12.8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Mission History ----------------------*/
+
+.mission-history {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    gap: 16px;
+}
+
+.img-mission {
+    position: relative;
+    width: 600px;
+}
+
+.circle-animate {
+    position: absolute;
+    top: 30%;
+    width: 200px;
+    height: 200px;
+    background: var(--hover-color);
+    border-radius: 50%;
+    box-shadow: var(--neon-box-shadow);
+    text-align: right;
+}
+
+.circle-animate span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
+    opacity: .4;
+    animation: circleAnimate 4s ease-in-out infinite;
+    animation-delay: calc(1s * var(--i));
+}
+
+.img-mission img {
+    width: 200px;
+    height: auto;
+    animation: floatImg 4s ease-in-out infinite;
+}
+
+.text-mission {
+    color: #fff;
+}
+
+.text-mission h3 {
+    font-size: 40px;
+    text-shadow: 2px 1px 1px #474747;
+}
+
+.text-mission p {
+    margin: 16px auto;
+    line-height: 32px;
+}
+
+.text-mission .mission-btn a {
+    margin-top: 16px;
+    height: 35px;
+    line-height: 35px;
+}
+
+/* Shop Section ----------------------*/
+
+.shop .container {
+   margin: 30px;
+}
+
+.shop .flight-box {
+    text-align: left;
+    width: 210px;
+}
+
+.shop .flight-box img {
+    animation: none;
+    filter: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.shop .flight-box .title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+.shop .flight-box .price {
+    color: var(--hover-color);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.shop-btn {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.shop-btn .marsBtn {
+    height: 40px;
+    line-height: 40px;
+}
+
+/* Experience Section ----------------------*/
+
+.experience .img-mission img {
+    width: 300px;
+}
+
+.experience .circle-animate {
+   position: absolute;
+   left: 27%;
+   width: 150px;
+   height: 150px;
+}
+
+/* Footer website ----------------------*/
+
+.footer {
+    width: 100%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 48px 12%;
+    color: #fff;
+    border-top: 1px solid #561389;
+}
+
+.container-foot {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 16px;
+}
+
+.container-foot .leftBox .social-media {
+    display: flex;
+    gap: 16px;
+}
+
+.leftBox .social-media a {
+    font-size: 24px;
+}
+
+.leftBox .social-media a:hover {
+    color: var(--hover-color);
+}
+
+.leftBox p {
+    padding: 15px 0;
+    line-height: 24px;
+}
+
+.container-foot .title {
+    font-size: 24px;
+    color: var(--hover-color);
+    font-weight: 600;
+}
+
+.quick-menu li {
+    margin-top: 16px;
+}
+
+.quick-menu li a:hover {
+   color: var(--hover-color);
+}
+
+.info li span {
+    display: flex;
+    align-items: center;
+    margin: 16px 16px 16px 0;
+    column-gap: 5px;
+}
+
+
+.copyRight {
+    padding: 24px 12%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    border-top: 1px solid rgba(117, 117, 117, 0.3);
+    align-items: center;
+}
+
+.copyRight a {
+    display: inline-flex;
+    align-items: center;
+    background: var(--hover-color);
+    border-radius: 50%;
+    padding: 10px;
+    color: #000;
+}
+
+/* Header sticky (js) css ----------------------*/
+header.sticky {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 9px 12%;
+    border-bottom: 1px solid #3e0e62;
+}
+
+/* Scroll animation (js) css ----------------------*/
+.scroll-left {
+    opacity: 0;
+    transform: translateX(15px);
+}
+
+.scroll-right {
+    opacity: 0;
+    transform: translateX(-15px);
+}
+
+.scroll-top {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.scroll-bottom {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.scroll-scale {
+    opacity: 0;
+    transform: scale(.8);
+}
+
+.show-items {
+    opacity: 1;
+    transform: translateX(0);
+    transform: translateY(0);
+    transition: all 2s;
+}
+
+/* Keyframes ----------------------*/
+@keyframes rotate{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes floatImg {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-14px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes circleAnimate {
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+
+
+/* Media queries ----------------------*/
+@media screen and (min-width:1200px) {
+    html {
+        font-size: 95%;
+    }
+    .nav-list li {
+        margin: 0 19.2px;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .header, header.sticky {
+        padding: 12px 3%;
+    }
+    .nav-list .nav-item {
+        padding: 23px 0;
+    }
+
+    .flight-list .container {
+        margin-top: 0;
+    }
+    section {
+        padding: 50px 3%;
+    }
+
+    .container-foot {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .footer, .copyRight {
+        padding: 32px 3%;
+    }
+
+    .mission-history, .experience {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .img-mission {
+        width: auto;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #menu-icon {
+        display: block;
+        margin-left: 11.2px;
+    }
+
+    .nav-list {
+        position: absolute;
+        top: -1000px;
+        right: 0;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.7);
+        height: 100vh;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        transition: all .7s ease;
+    }
+
+    .open {
+        top: 100%;
+    }
+
+    .nav-list li {
+        padding: 19.2px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list .nav-item {
+        padding: 5px 0;
+        font-size: 22.4px;
+    }
+
+    .home {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .earth-rotate .earth {
+        animation: none;
+    }
+
+    .container-foot {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width:503px) {
+    .copyRight {
+        display: block;
+        text-align: center;
+    }
+
+    .copyRight p {
+        margin-bottom: 16px;
+    }
+
+    .earth-rotate .earth {
+        display: none;
+    }
+
+    /* .shop .flight-box {
+        width: 78%;
+    } */
+
+    /* .shop-btn .marsBtn {
+        width: 48%;
+    } */ 
+
+    .circle-animate {
+        width: 150px;
+        height: 150px;
+        left: 12%;
+    }
+}
+
+@media screen and (max-width: 330px) {
+
+    /* html {
+        font-size: 90%;
+    } */
+
+    .header, header.sticky {
+        padding: 8px 3%;
+        position: fixed; 
+        left: 0;
+        top: 0;
+    }
+
+    .header .logo {
+        font-size: 16px;
+    }
+    
+    .nav-list li {
+        margin: 0 10px;
+    }
+    
+    .nav-list .nav-item {
+        font-size: 18px;
+    }
+
+    .right-side {
+        position: relative; 
+    }
+
+    .flight-box img {
+        width: 100px; 
+    }
+    
+    .container-foot {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+  
+    .leftBox p,
+    .container-foot .title {
+        font-size: 14px;
+    }
+  
+    .footer,
+    .copyRight {
+        padding: 24px 3%;
+    } 
+}
