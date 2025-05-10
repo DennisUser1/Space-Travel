@@ -72,6 +72,8 @@ a {
 
 .header .nav-list {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-list li {
@@ -165,7 +167,7 @@ section {
     left: 0;
     right: 0;
     z-index: -1;
-    width: calc(var(--index)*45);
+    width: calc(var(--index)*40);
     animation: rotate 300s infinite linear;
 }
 
@@ -553,7 +555,7 @@ header.sticky {
         margin-top: 0;
     }
     section {
-        padding: 50px 3%;
+        padding: 50px 6%;
     }
 
     .container-foot {
@@ -638,20 +640,20 @@ header.sticky {
         display: none;
     }
 
-    /* .shop .flight-box {
-        width: 78%;
-    } */
-
-    /* .shop-btn .marsBtn {
-        width: 48%;
-    } */ 
-
     .circle-animate {
         width: 150px;
         height: 150px;
         left: 12%;
     }
 }
+
+  /* .shop .flight-box {
+        width: 78%;
+    } */
+
+    /* .shop-btn .marsBtn {
+        width: 48%;
+    } */ 
 
 @media screen and (max-width: 330px) {
 
@@ -695,7 +697,6 @@ header.sticky {
     .container-foot .title {
         font-size: 14px;
     }
-  
     .footer,
     .copyRight {
         padding: 24px 3%;
